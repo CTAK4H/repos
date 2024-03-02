@@ -15,7 +15,7 @@ int main()
 		printf("Введите количество часов: ");
 
 		scanf("%d", &hours);
-		if (hours > 2 && hours < 93)
+		if (hours > 2 && hours < 91)
 		{
 			for (int i = 0; i < hours; i += 3)
 			{
