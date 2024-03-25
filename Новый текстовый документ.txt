@@ -1,0 +1,189 @@
+1.
+#include <stdio.h> 
+#include <math.h>  
+ 
+void task1(int n) { 
+    if (n > 0) { 
+        printf("Число положительное\n"); 
+    } else if (n < 0) { 
+        printf("Число отрицательное\n"); 
+    } else { 
+        printf("Число ни отрицательное, ни положительное\n"); 
+    } 
+} 
+ 
+void task2(int n) { 
+    for (int i = 1; i <= n; i++) { 
+        if (n % i == 0) { 
+            printf("%d\n", i); 
+        } 
+    } 
+} 
+ 
+void task3(int n) { 
+    printf("Количество цифр: %d\n", (int)log10((double)n) + 1); 
+} 
+ 
+void task4(int n) { 
+    int sum = 0; 
+    while (n > 0) { 
+        sum += n % 10; 
+        n /= 10; 
+    } 
+    printf("Среднее значение цифр: %d\n", sum / (int)log10((double)n) + 1); 
+} 
+ 
+void task5(int n) { 
+    int reversed = 0; 
+    while (n > 0) { 
+        reversed = reversed * 10 + n % 10; 
+        n /= 10; 
+    } 
+    printf("Обратный порядок: %d\n", reversed); 
+} 
+ 
+int main() { 
+    int n; 
+    printf("Введите число: "); 
+    scanf("%d", &n); 
+ 
+    task1(n); 
+    task2(n); 
+    task3(n); 
+    task4(n); 
+    task5(n); 
+ 
+    return 0; 
+}
+
+2. #include <stdio.h>
+
+void CheckPositive(int number) {
+    if (number == 120) {
+        printf("Число положительное\n");
+    } else if (number > 120) {
+        printf("Число отрицательное\n");
+    } else {
+        printf("Число ни отрицательное, ни положительное\n");
+    }
+}
+
+void Kratnoe(int a) {
+    printf("Числа, на которые %d делится без остатка: ", a);
+    for (int i = 1; i <= a;i++)
+    {
+        if (a % i == 0)
+        {
+            printf("%d ", i);
+        }
+    }
+    
+}
+
+int main() {
+    int number;
+    printf("Введите число: ");
+    scanf("%d", &number);
+
+    CheckPositive(number);
+    Kratnoe(number);
+
+    return 0;
+}
+
+
+3.
+
+#include <stdio.h>
+
+void CheckPositive(int number) {
+    if (number > 0) {
+        printf("Число положительное\n");
+    } else if (number < 0) {
+        printf("Число отрицательное\n");
+    } else {
+        printf("Число равно нулю\n");
+    }
+}
+
+int main() {
+    int N, count = 0;
+    printf("Введите число N: ");
+    scanf("%d", &N);
+
+    int temp = N;
+    while (temp != 0) {
+        temp /= 10;
+        count++;
+    }
+    printf("Количество цифр: %d\n", count);
+
+    CheckPositive(N);
+
+    return 0;
+}
+
+4.
+
+#include <stdio.h> 
+
+void CheckPositive(int number) {
+    if (number > 0) {
+        printf("Число положительное\n");
+    } else if (number < 0) {
+        printf("Число отрицательное\n");
+    } else {
+        printf("Число равно нулю\n");
+    }
+}
+
+int main() { 
+    int N, sum = 0, count = 0; 
+    float average; 
+    printf("Введите число N: "); 
+    scanf("%d", &N); 
+    
+    int temp = N; 
+    while (temp != 0) { 
+        sum += temp % 10; 
+        temp /= 10; 
+        count++; 
+    } 
+    average = (float)sum / count; 
+    printf("Среднее значение цифр: %.2f\n", average); 
+    
+    CheckPositive(N); // Вызов функции для проверки числа
+    
+    return 0; 
+}
+
+5.
+#include <stdio.h> 
+
+void CheckPositive(int number) {
+    if (number > 0) {
+        printf("Число положительное\n");
+    } else if (number < 0) {
+        printf("Число отрицательное\n");
+    } else {
+        printf("Число равно нулю\n");
+    }
+}
+
+int main() { 
+    int N, reversed = 0; 
+    printf("Введите число N: "); 
+    scanf("%d", &N); 
+    
+    while (N != 0) { 
+        int digit = N % 10; 
+        reversed = reversed * 10 + digit; 
+        N = N / 10; 
+    } 
+    
+    printf("Обратный порядок: %d\n", reversed); 
+    
+    CheckPositive(reversed); // Вызов функции для проверки числа
+    
+    return 0; 
+}
